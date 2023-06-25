@@ -23,7 +23,7 @@ target_include_directories(argparse INTERFACE
   $<BUILD_INTERFACE:${CMAKE_CURRENT_LIST_DIR}/include>)
 
 if(ARGPARSE_NO_STD_HEADER_INCLUDES)
-  target_compile_definitions(argparse INTERFACE CXX_ARGPARSE_USE_STD_MODULE)
+  target_compile_definitions(argparse INTERFACE CXX_ARGPARSE_CXX_MODULES)
 endif()
 if(ARGPARSE_BUILD_SAMPLES)
   add_subdirectory(samples)
