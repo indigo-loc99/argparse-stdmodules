@@ -29,6 +29,17 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE  OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 #pragma once
+#ifdef CXX_ARGPARSE_CXX_MODULES
+
+#define CXX_ARGPARSE_USE_STD_MODULE
+#define CXX_ARGPARSE_EXPORT export
+
+#else
+
+#define CXX_ARGPARSE_EXPORT
+
+#endif // !CXX_ARGPARSE_CXX_MODULES
+
 #ifndef CXX_ARGPARSE_USE_STD_MODULE
 #include <algorithm>
 #include <any>
@@ -350,6 +361,10 @@ std::string join(StrIt first, StrIt last, const std::string &separator) {
 }
 
 } // namespace details
+} // namespace argparse
+
+CXX_ARGPARSE_EXPORT
+namespace argparse {
 
 enum class nargs_pattern { optional, any, at_least_one };
 
